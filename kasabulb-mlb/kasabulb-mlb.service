@@ -1,0 +1,12 @@
+[Unit]
+Description=Plex Kasa Light Control
+After=network.target
+
+[Service]
+User=yourusername
+ExecStart=/usr/bin/python3 /path/to/plex-kasa.py
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target
