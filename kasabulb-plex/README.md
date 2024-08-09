@@ -13,8 +13,8 @@ This project automates the control of a TP-Link Kasa smart bulb based on Plex se
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/plex-kasa-automation.git
-    cd plex-kasa-automation
+    git clone https://github.com/SwaggyMike/kasabulb.git
+    cd kasabulb/plex-kasa
     ```
 
 2. **Install the required Python libraries:**
