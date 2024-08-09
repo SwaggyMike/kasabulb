@@ -1,4 +1,4 @@
-# Team-Bulb Automation
+# KasaBulb-MLB Automation
 
 This project automates the control of a TP-Link Kasa smart bulb based on the game schedule of a specified sports team. When a game is live, the Kasa bulb turns on and changes to a user-defined color.
 
@@ -13,8 +13,8 @@ This project automates the control of a TP-Link Kasa smart bulb based on the gam
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/team-bulb-automation.git
-    cd team-bulb-automation
+    git clone https://github.com/SwaggyMike/kasabulb.git
+    cd kasabulb/kasabulb-mlb
     ```
 
 2. **Install the required Python libraries:**
@@ -83,23 +83,23 @@ Here are some common colors and their HSV values to help you configure your bulb
 4. **Run the script:**
 
     ```bash
-    python3 team-bulb.py
+    python3 kasabulb-mlb.py
     ```
 
 ## Systemd Service
 
 Create a systemd service to run the script continuously.
 
-### team-bulb.service
+### kasabulb-mlb.service
 
 ```ini
 [Unit]
-Description=Team Bulb Light Control
+Description=Kasa Bulb Light Control
 After=network.target
 
 [Service]
 User=yourusername
-ExecStart=/usr/bin/python3 /home/yourusername/repos/team-bulb-automation/team-bulb.py
+ExecStart=/usr/bin/python3 /home/yourusername/repos/kasabulb/kasabulb-mlb/kasabulb-mlb.py
 Restart=always
 RestartSec=300  # Restart the script every 5 minutes
 
@@ -107,14 +107,14 @@ RestartSec=300  # Restart the script every 5 minutes
 WantedBy=multi-user.target
 ```
 
-Replace `yourusername` with your actual username and `/home/yourusername/repos/team-bulb-automation/team-bulb.py` with the actual path to your script.
+Replace `yourusername` with your actual username and `/home/yourusername/repos/kasabulb/kasabulb-mlb/kasabulb-mlb.py` with the actual path to your script.
 
 ### Enable and Start the Service
 
 1. **Move the service file to the systemd directory:**
 
     ```bash
-    sudo mv team-bulb.service /etc/systemd/system/
+    sudo mv kasabulb-mlb.service /etc/systemd/system/
     ```
 
 2. **Reload systemd to recognize the new service:**
@@ -126,17 +126,17 @@ Replace `yourusername` with your actual username and `/home/yourusername/repos/t
 3. **Enable the service to start on boot:**
 
     ```bash
-    sudo systemctl enable team-bulb.service
+    sudo systemctl enable kasabulb-mlb.service
     ```
 
 4. **Start the service:**
 
     ```bash
-    sudo systemctl start team-bulb.service
+    sudo systemctl start kasabulb-mlb.service
     ```
 
 5. **Check the status of the service:**
 
     ```bash
-    sudo systemctl status team-bulb.service
+    sudo systemctl status kasabulb-mlb.service
     ```
